@@ -1,0 +1,24 @@
+# Media / backups
+media/
+media-backup*/
+staticfiles/
+*.dump
+
+# Django / Python
+db.sqlite3
+__pycache__/
+*.pyc
+*.log
+
+# Secrets
+.env
+.env.*
+*firebase-adminsdk*.json
+
+# Editor / OS
+.vscode/
+.DS_Store
+
+# Virtualenv (if applicable)
+venv/
+env/
