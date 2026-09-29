@@ -40,7 +40,7 @@ else:
 ALLOWED_HOSTS = [
     'liyu-delivery.fly.dev',
     'https://kezihdelivery.hailecw27.workers.dev',
-    'kezihbackend-production.up.railway.app',
+    'kezihbackend-production-a621.up.railway.app',
     'localhost',
     '127.0.0.1',
     '192.168.43.7',
