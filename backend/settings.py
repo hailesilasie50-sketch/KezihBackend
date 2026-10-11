@@ -190,11 +190,19 @@ else:
 
 
 if ENVIRONMENT == "production":
+    # Railway: set DATABASE_URL on this service to the reference variable
+    #   ${{Postgres.DATABASE_URL}}
+    # (replace "Postgres" with your database service's name). That is the
+    # INTERNAL URL (postgres.railway.internal) and only works from inside
+    # the same Railway project.
+    #
+    # SSL isn't needed on Railway's private network. If you ever use the
+    # public proxy URL (DATABASE_PUBLIC_URL), set DB_SSL_REQUIRE=True.
     DATABASES = {
         'default': dj_database_url.config(
             env="DATABASE_URL",
             conn_max_age=600,
-            ssl_require=False  # Fly internal network doesn't need SSL
+            ssl_require=env.bool("DB_SSL_REQUIRE", default=False),
         )
     }
 else:
